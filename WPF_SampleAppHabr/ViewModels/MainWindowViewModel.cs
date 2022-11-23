@@ -9,6 +9,20 @@ namespace WPF_SampleAppHabr.ViewModels
     //вьюмодель для баового класса, наследуется от базовой вьюмодели
     public class MainWindowViewModel : BaseViewModel
     {   //свойство на которое байндиться текст контролов
-        public string SynchronizedText { get; set; } 
+        //public string SynchronizedText { get; set; }
+
+        //модификация текста  вьюмодели главного окна,
+        //чтобы она отслеживала изменение свойства SynchronizedText
+        //и вызывала событие PropertyChanged
+        private string _synchronizedText;
+        public string SynchronizedText
+        {
+            get => _synchronizedText;
+            set
+            {
+                _synchronizedText = value;
+                OnPropertyChanged(nameof(SynchronizedText));
+            }
+        }
     }
 }
