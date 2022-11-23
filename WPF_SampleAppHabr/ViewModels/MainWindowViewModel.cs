@@ -14,7 +14,8 @@ namespace WPF_SampleAppHabr.ViewModels
         //модификация текста  вьюмодели главного окна,
         //чтобы она отслеживала изменение свойства SynchronizedText
         //и вызывала событие PropertyChanged
-        private string _synchronizedText;
+        private string _synchronizedText; //скрытое поле для хранения текста
+
         public string SynchronizedText
         {
             get => _synchronizedText;
